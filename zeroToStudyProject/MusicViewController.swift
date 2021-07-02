@@ -9,13 +9,28 @@ import UIKit
 
 class MusicViewController: UIViewController {
 
+   
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateTextView()
     }
     
-
+    func updateTextView() {
+        let path = "https://open.spotify.com/playlist/37i9dQZF1DWWQRwui0ExPn"
+        let text = textView.text ?? ""
+        let attributedString = NSAttributedString.makeHyperlink(for: path, in: text, as: "here")
+        textView.attributedText = attributedString
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
